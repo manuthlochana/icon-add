@@ -10,7 +10,7 @@ const LoadingScreen = () => {
       
       <div className="relative z-10 text-center">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 animate-fadeInUp">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 animate-fadeInUp" style={{ color: '#ffca57' }}>
             Manuth <span className="text-primary">Lochana</span>
           </h1>
           <p className="text-lg text-muted-foreground animate-fadeInUp" style={{ animationDelay: "0.2s" }}>
