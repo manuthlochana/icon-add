@@ -53,13 +53,16 @@ const HeroSection = () => {
             Developer • Software Innovator • Tech Visionary
           </p>
 
-          {/* Profile Photo */}
+          {/* Profile Photo - Optimized for LCP */}
           <div className="flex justify-center mb-12">
             <div className="relative">
               <img
                 src={profileImage || "/src/assets/profile-photo.jpg"}
                 alt="Manuth Lochana - Profile Photo"
                 className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover profile-glow animate-glow border-4 border-white/20"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-accent/20 pointer-events-none"></div>
             </div>

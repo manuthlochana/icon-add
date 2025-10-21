@@ -4,6 +4,13 @@ export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
+  safelist: [
+    // Safelist dynamic animation classes
+    'animate-fadeInUp',
+    'animate-slideInLeft',
+    'animate-slideInRight',
+    'animate-glow',
+  ],
   theme: {
     container: {
       center: true,

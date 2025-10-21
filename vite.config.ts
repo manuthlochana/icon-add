@@ -15,4 +15,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Enable minification for production (using esbuild, default)
+    minify: mode === 'production' ? 'esbuild' : false,
+    // Generate source maps for debugging
+    sourcemap: mode === 'production' ? 'hidden' : true,
+    // CSS code splitting for better caching
+    cssCodeSplit: true,
+    // Optimize chunk splitting
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['lucide-react', '@radix-ui/react-slot'],
+        },
+      },
+    },
+    // Set chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+  },
 }));
