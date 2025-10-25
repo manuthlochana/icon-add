@@ -139,6 +139,26 @@ export default {
             boxShadow: "0 0 40px hsla(var(--glow-primary)), 0 0 60px hsla(var(--glow-accent))",
           },
         },
+        scaleIn: {
+          from: {
+            opacity: "0",
+            transform: "scale(0.8)",
+          },
+          to: {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        slideInUp: {
+          from: {
+            opacity: "0",
+            transform: "translateY(50px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -148,6 +168,9 @@ export default {
         slideInLeft: "slideInLeft 0.6s ease-out forwards",
         slideInRight: "slideInRight 0.6s ease-out forwards",
         glow: "glow 3s ease-in-out infinite",
+        scaleIn: "scaleIn 0.5s ease-out forwards",
+        slideInUp: "slideInUp 0.6s ease-out forwards",
+        "spin-slow": "spin 8s linear infinite",
       },
     },
   },

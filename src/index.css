@@ -40,8 +40,8 @@ All colors MUST be HSL.
     /* Custom Design Tokens */
     --glass-bg: 0 0% 100% / 0.25;
     --glass-border: 0 0% 100% / 0.3;
-    --glow-primary: 215 55% 38% / 0.3;
-    --glow-accent: 41 100% 67% / 0.4;
+    --glow-primary: 215 55% 38% / 0.5;
+    --glow-accent: 41 100% 67% / 0.6;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(215, 58%, 97%), hsl(205, 55%, 89%));
@@ -78,7 +78,7 @@ All colors MUST be HSL.
 
   .dark {
     /* Dark Portfolio Color Palette */
-    --background: 222 47% 11%; /* #1A1F2E */
+    --background: 222 47% 8%; /* Darker background */
     --foreground: 210 40% 98%; /* #F8FAFC */
 
     --card: 222 47% 11%;
@@ -87,8 +87,8 @@ All colors MUST be HSL.
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 215 89% 70%; /* #4A9EFF - Brighter blue for dark mode */
-    --primary-foreground: 222 47% 11%;
+    --primary: 215 89% 65%; /* Slightly darker blue for dark mode */
+    --primary-foreground: 222 47% 8%;
 
     --secondary: 217 32% 18%; /* #2A3441 */
     --secondary-foreground: 210 40% 98%;
@@ -176,7 +176,7 @@ All colors MUST be HSL.
   .blob-1 {
     width: 300px;
     height: 300px;
-    background: var(--gradient-glow);
+    background: radial-gradient(circle at center, hsla(215, 55%, 38%, 0.3), transparent);
     top: 10%;
     left: -10%;
     animation-delay: 0s;
@@ -185,7 +185,7 @@ All colors MUST be HSL.
   .blob-2 {
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle at center, hsl(var(--glow-accent)), transparent);
+    background: radial-gradient(circle at center, hsla(41, 100%, 67%, 0.4), transparent);
     top: 50%;
     right: -5%;
     animation-delay: 2s;
@@ -194,10 +194,22 @@ All colors MUST be HSL.
   .blob-3 {
     width: 150px;
     height: 150px;
-    background: var(--gradient-glow);
+    background: radial-gradient(circle at center, hsla(215, 55%, 38%, 0.25), transparent);
     bottom: 20%;
     left: 20%;
     animation-delay: 4s;
+  }
+
+  .dark .blob-1 {
+    background: radial-gradient(circle at center, hsla(215, 89%, 70%, 0.4), transparent);
+  }
+
+  .dark .blob-2 {
+    background: radial-gradient(circle at center, hsla(41, 100%, 72%, 0.5), transparent);
+  }
+
+  .dark .blob-3 {
+    background: radial-gradient(circle at center, hsla(215, 89%, 70%, 0.35), transparent);
   }
 
   /* Profile glow */
@@ -271,6 +283,28 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .animate-fadeInUp {
     animation: fadeInUp 0.6s ease-out forwards;
   }
@@ -285,6 +319,25 @@ All colors MUST be HSL.
 
   .animate-glow {
     animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-slideInUp {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  /* Scroll-triggered animations */
+  .scroll-animate {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Scroll behavior */

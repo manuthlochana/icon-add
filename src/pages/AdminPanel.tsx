@@ -10,6 +10,9 @@ import AdminEducation from "@/components/admin/AdminEducation";
 import AdminMessages from "@/components/admin/AdminMessages";
 import AdminContacts from "@/components/admin/AdminContacts";
 import AdminProfile from "@/components/admin/AdminProfile";
+import AdminArticles from "@/components/admin/AdminArticles";
+import AdminCategories from "@/components/admin/AdminCategories";
+import AdminTags from "@/components/admin/AdminTags";
 
 const AdminPanel = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -82,7 +85,10 @@ const AdminPanel = () => {
         </div>
 
         <Tabs defaultValue="projects" className="space-y-6">
-          <TabsList className="grid grid-cols-3 sm:grid-cols-6 w-full gap-1 h-auto p-1">
+          <TabsList className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 w-full gap-1 h-auto p-1">
+            <TabsTrigger value="articles" className="text-xs sm:text-sm">Articles</TabsTrigger>
+            <TabsTrigger value="categories" className="text-xs sm:text-sm">Categories</TabsTrigger>
+            <TabsTrigger value="tags" className="text-xs sm:text-sm">Tags</TabsTrigger>
             <TabsTrigger value="projects" className="text-xs sm:text-sm">Projects</TabsTrigger>
             <TabsTrigger value="skills" className="text-xs sm:text-sm">Skills</TabsTrigger>
             <TabsTrigger value="education" className="text-xs sm:text-sm">Education</TabsTrigger>
@@ -90,6 +96,18 @@ const AdminPanel = () => {
             <TabsTrigger value="contacts" className="text-xs sm:text-sm">Contacts</TabsTrigger>
             <TabsTrigger value="profile" className="text-xs sm:text-sm">Profile</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="articles">
+            <AdminArticles />
+          </TabsContent>
+
+          <TabsContent value="categories">
+            <AdminCategories />
+          </TabsContent>
+
+          <TabsContent value="tags">
+            <AdminTags />
+          </TabsContent>
 
           <TabsContent value="projects">
             <AdminProjects />

@@ -3,7 +3,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
-const ProjectsSection = () => {
+const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,7 +25,7 @@ const ProjectsSection = () => {
 
   if (isLoading) {
     return (
-      <section id="projects" className="py-20 relative">
+      <section className="min-h-screen py-20 relative">
         <div className="container mx-auto px-6">
           <div className="text-center">Loading projects...</div>
         </div>
@@ -34,27 +34,27 @@ const ProjectsSection = () => {
   }
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section className="min-h-screen py-20 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16 animate-fadeInUp">
+        <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-16 animate-fadeInUp">
           Featured <span className="text-primary">Projects</span>
-        </h2>
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass-panel p-6 rounded-xl hover:glow-effect hover:-translate-y-2 hover:scale-105 smooth-transition animate-slideInUp group"
+              className="glass-panel p-6 rounded-xl hover:glow-effect hover:-translate-y-2 smooth-transition animate-slideInUp"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary smooth-transition">{project.title}</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-3">{project.title}</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.technologies?.map((tech: string, index: number) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20 hover:scale-110 smooth-transition"
+                    className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20"
                   >
                     {tech}
                   </span>
@@ -111,4 +111,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+export default Projects;
