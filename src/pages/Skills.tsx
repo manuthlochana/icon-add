@@ -53,10 +53,11 @@ const Skills = () => {
 
   if (isLoading) {
     return (
-      <section className="min-h-screen py-20 relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center">Loading skills...</div>
-        </div>
+      <section className="min-h-screen py-20 relative flex items-center justify-center">
+        <div className="blob blob-1" />
+        <div className="blob blob-2" />
+        <div className="blob blob-3" />
+        <div className="w-12 h-12 animate-spin rounded-full border-2 border-muted border-t-primary"></div>
       </section>
     );
   }
