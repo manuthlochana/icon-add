@@ -16,6 +16,7 @@ const Skills = () => {
   };
 
   useEffect(() => {
+    document.title = "Skills - Manuth Lochana";
     fetchSkills();
   }, []);
 

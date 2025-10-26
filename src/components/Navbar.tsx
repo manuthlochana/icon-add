@@ -38,13 +38,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-1 group">
             <img 
               src={logo} 
               alt="Manuth Logo" 
-              className="h-12 w-auto smooth-transition group-hover:scale-110 invert dark:invert-0"
+              className="h-10 w-auto smooth-transition group-hover:scale-110 invert dark:invert-0"
             />
-            <span className="text-2xl font-bold text-primary tracking-tight font-sans">Manuth</span>
+            <span className="text-xl font-bold text-primary tracking-tight font-sans">Manuth</span>
           </Link>
 
           {/* Desktop Navigation */}

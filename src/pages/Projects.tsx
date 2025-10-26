@@ -8,6 +8,7 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Projects - Manuth Lochana";
     fetchProjects();
   }, []);
 

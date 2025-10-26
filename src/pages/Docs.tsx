@@ -23,6 +23,7 @@ const Docs = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Documentation - Manuth Lochana";
     fetchData();
   }, [selectedCategory]);
 

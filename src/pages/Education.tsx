@@ -14,6 +14,7 @@ const Education = () => {
   };
 
   useEffect(() => {
+    document.title = "Education - Manuth Lochana";
     fetchEducation();
   }, []);
 

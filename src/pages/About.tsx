@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 const About = () => {
+  useEffect(() => {
+    document.title = "About - Manuth Lochana";
+  }, []);
+
   return (
     <section className="min-h-screen py-20 relative">
       {/* Animated background blobs */}

@@ -7,6 +7,7 @@ const Home = () => {
   const [profileImage, setProfileImage] = useState<string | null>(null);
 
   useEffect(() => {
+    document.title = "Manuth Lochana - Developer & Tech Innovator";
     loadProfileImage();
   }, []);
 
@@ -86,13 +87,13 @@ const Home = () => {
           {/* Right Side - Profile Image */}
           <div className="flex justify-center animate-slideInRight order-1 md:order-2">
             <div className="relative group w-full max-w-md">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-full blur-2xl group-hover:blur-3xl smooth-transition opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-full blur-2xl group-hover:blur-3xl smooth-transition opacity-40"></div>
               <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 opacity-40 blur-lg animate-pulse"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 opacity-30 blur-lg"></div>
                 <img
                   src={profileImage || "/src/assets/profile-photo.jpg"}
                   alt="Manuth Lochana - Profile Photo"
-                  className="rounded-full w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover relative z-10 border-2 border-primary/30 shadow-2xl group-hover:scale-105 smooth-transition animate-scaleIn mx-auto"
+                  className="rounded-full w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover relative z-10 border border-primary/20 shadow-2xl group-hover:scale-105 smooth-transition animate-scaleIn mx-auto"
                   fetchPriority="high"
                   loading="eager"
                   decoding="async"

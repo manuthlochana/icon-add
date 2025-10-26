@@ -17,6 +17,7 @@ const Contact = () => {
   const [socialLinks, setSocialLinks] = useState<any[]>([]);
 
   useEffect(() => {
+    document.title = "Contact - Manuth Lochana";
     fetchContacts();
   }, []);
 
