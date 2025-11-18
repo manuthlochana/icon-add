@@ -17,7 +17,6 @@ import AdminPanel from "./pages/AdminPanel";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import LoadingScreen from "./components/LoadingScreen";
-import Sitemap from "./pages/Sitemap";
 import Redirects from "./pages/Redirects";
 
 const queryClient = new QueryClient();
@@ -46,7 +45,6 @@ const App = () => {
         <BrowserRouter>
           <Redirects />
           <Routes>
-            <Route path="/sitemap.xml" element={<Sitemap />} />
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
